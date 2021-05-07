@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To do list</title>
+    <link rel="icon" href="https://icon-library.com/images/dose-icon/dose-icon-21.jpg">
+    <script defer  src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script defer src="toDoListJs.js"></script>
+    <link rel="stylesheet" href="tailwindcss.css">
+</head>
+<body class="text-white font-sans font-light ">
+<div id="app">
+
+
+    <div class="bg-gradient-to-br from-yellow-300 via-green-400 to-blue-600 w-screen mb-0 flex justify-center items-center border-b-2 border-opacity-10">
+        <nav>
+            <a href="#">
+            <strong>To Dos</strong>
+        </a>
+
+        </nav>
+
+
+    </div>
+    <div class="bg-gradient-to-r from-yellow-300 via-green-400 to-blue-600 w-screen h-screen  flex justify-center items-center">
+        <div class="  bg-gradient-to-r from-yellow-200 via-green-300 to-blue-400 w-2/3 h-full py-6 md:h-2/3">
+            <div class="flex justify-center items-center border-b-2"> <h1> <strong><em>TODAY</em></strong></h1> </div>
+            <div class="flex justify-evenly items-center mt-4">
+                <input v-model="newTask" placeholder="Insert" class="rounded-lg text-gray-800 text-sm p-1 bg-gradient-to-br from-yellow-50 via-green-100 to-blue-600  " type="text">
+                <button @click="add" class="rounded-lg text-gray-800 text-sm   p-1 bg-gradient-to-br from-yellow-50 via-green-100 to-blue-600 ">
+                    Add Task
+                </button>
+
+
+            </div>
+            <div class="bg-none text-gray-500 my-12 mx-6 flex justify-start">
+
+                <ul>
+                    <li v-for="task in existingTask" class="flex justify-around">
+                        <span>
+                            {{task.text}}
+                        </span>
+                        <button @click="deletetask(i)" class="rounded-lg text-red-800 text-sm p-1 ">
+                            <em>X</em>
+                        </button>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+</div>
+
+</body>
+</html>
